@@ -1,0 +1,14 @@
+provider:
+  name: faas
+  gateway: http://localhost:8080
+
+functions:
+  colorization:
+    lang: Dockerfile
+    handler: .
+    image: local-openfaas-colorization
+    environment:
+      http_proxy: http://10.97.113.4:3128
+      https_proxy: http://10.97.113.4:3128
+      read_timeout: 60
+      write_timeout: 60
